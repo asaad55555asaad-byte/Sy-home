@@ -1,26 +1,62 @@
-name: Build
+
+name: Build SY Home
+
 on:
   workflow_dispatch:
   push:
-    paths: ['SyHome.zip']
+    paths:
+      - 'SyHome.zip'
+      - '.github/workflows/build.yml'
+
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - run: unzip -q SyHome.zip
-      - uses: actions/setup-java@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
-      - run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-      - uses: gradle/actions/setup-gradle@v4
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android licenses
+        run: yes | sdkmanager --licenses || true
+
+      - name: Extract project
+        run: |
+          mkdir -p SyHome
+          unzip -oq SyHome.zip -d .
+          test -f SyHome/app/build.gradle.kts
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: 8.7
-      - run: gradle -p SyHome :installer:assembleDebug --no-daemon
-      - uses: actions/upload-artifact@v4
+          gradle-version: '8.7'
+
+      - name: Build SY Home
+        run: |
+          gradle -p SyHome :app:assembleDebug :installer:assembleDebug --no-daemon
+
+      - name: Verify APK files
+        run: |
+          test -f SyHome/app/build/outputs/apk/debug/app-debug.apk
+          test -f SyHome/installer/build/outputs/apk/debug/installer-debug.apk
+
+      - name: Upload APK files
+        uses: actions/upload-artifact@v4
         with:
-          name: SyHome-apks
+          name: SY-Home-2.3-APKs
           path: |
-            SyHome/installer/build/outputs/apk/debug/installer-debug.apk
             SyHome/app/build/outputs/apk/debug/app-debug.apk
+            SyHome/installer/build/outputs/apk/debug/installer-debug.apk
+          if-no-files-found: error
+          retention-days: 14
