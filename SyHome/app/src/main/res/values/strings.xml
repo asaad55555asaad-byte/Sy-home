@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name">Sy Home</string>
+    <string name="p_fajr">Fajr</string>
+    <string name="p_sunrise">Sunrise</string>
+    <string name="p_dhuhr">Dhuhr</string>
+    <string name="p_asr">Asr</string>
+    <string name="p_maghrib">Maghrib</string>
+    <string name="p_isha">Isha</string>
+    <string name="m_first">Move to first</string>
+    <string name="m_earlier">Move earlier</string>
+    <string name="m_later">Move later</string>
+    <string name="m_hide">Hide</string>
+    <string name="menu_title">Menu</string>
+    <string name="menu_unhide">Show hidden apps</string>
+    <string name="menu_reset">Reset order</string>
+    <string name="menu_settings">System settings</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="s_language">Language</string>
+    <string name="lang_auto">Automatic (TV language)</string>
+    <string name="p_screen_settings">Screen settings</string>
+    <string name="p_arrange">Arrange favorites</string>
+    <string name="p_standby">Standby screen</string>
+    <string name="q_tvsettings">TV settings</string>
+    <string name="shelf_favs">Favorites</string>
+    <string name="shelf_apps">All apps</string>
+    <string name="shelf_inputs">Inputs</string>
+    <string name="of_fmt">%1$s %2$d of %3$d</string>
+    <string name="m_fav_add">Add to favorites</string>
+    <string name="m_fav_remove">Remove from favorites</string>
+    <string name="done_toast">Done</string>
+    <string name="reset_favs">Reset favorites</string>
+    <string name="s_team">Favorite team</string>
+    <string name="team_hint">Team name, e.g. Barcelona</string>
+    <string name="sb_next_match">Next match</string>
+    <string name="sb_no_match">No upcoming match</string>
+    <string name="sb_ramadan">Ramadan</string>
+    <string name="sb_ramadan_now">Ramadan Kareem</string>
+    <string name="sb_days">%1$d days</string>
+    <string name="sb_starts">Starts around %1$s</string>
+    <string name="sb_next_prayer">Next prayer</string>
+    <string name="sb_after">in %1$s</string>
+    <string name="dur_min">%1$d min</string>
+    <string name="dur_hm">%1$d h %2$d min</string>
+    <string name="sb_hilo">High %1$d° · Low %2$d°</string>
+    <string name="wc_clear">Clear</string>
+    <string name="wc_partly">Partly cloudy</string>
+    <string name="wc_cloudy">Cloudy</string>
+    <string name="wc_fog">Fog</string>
+    <string name="wc_rain">Rain</string>
+    <string name="wc_snow">Snow</string>
+    <string name="wc_storm">Thunderstorm</string>
+    <string name="s_background">Background</string>
+    <string name="s_dim">Image darkness</string>
+    <string name="s_accent">Highlight color</string>
+    <string name="s_columns">Columns (All apps)</string>
+    <string name="s_labels">App names</string>
+    <string name="s_weather">Weather</string>
+    <string name="s_prayers">Prayer times</string>
+    <string name="s_clock">Clock format</string>
+    <string name="s_units">Temperature unit</string>
+    <string name="s_city">City</string>
+    <string name="s_method">Prayer calculation method</string>
+    <string name="s_on">On</string>
+    <string name="s_off">Off</string>
+    <string name="bg_color">Color</string>
+    <string name="bg_image">Image</string>
+    <string name="bg_pick_color">Choose a color</string>
+    <string name="bg_pick_image">Choose an image</string>
+    <string name="bg_reset">Default</string>
+    <string name="clock_24">24-hour</string>
+    <string name="clock_12">12-hour</string>
+    <string name="unit_c">Celsius (°C)</string>
+    <string name="unit_f">Fahrenheit (°F)</string>
+    <string name="city_hint">City name</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_results">No results</string>
+    <string name="no_picker">No image picker found on this TV</string>
+    <string name="img_error">Could not load that image</string>
+    <string name="net_error">No connection</string>
+    <string name="reset_all">Reset all settings</string>
+
+    <string name="q_wifi">Wi-Fi</string>
+    <string name="q_settings">Settings</string>
+    <string name="q_inputs">Inputs</string>
+    <string name="q_apps">All apps</string>
+    <string name="menu_syhome">Sy Home settings</string>
+    <string name="m_live">LIVE</string>
+    <string name="m_ft">Full time</string>
+    <string name="m_page">Match page</string>
+    <string name="day_today">Today</string>
+    <string name="day_tomorrow">Tomorrow</string>
+    <string name="day_yesterday">Yesterday</string>
+    <string name="no_inputs">No inputs found</string>
+    <string name="no_matches">No upcoming matches</string>
+    <string name="s_matches">Match display</string>
+    <string name="s_leagues">Match leagues</string>
+    <string name="credit_by">Designed by</string>
+    <string name="credit_ig">Follow us on Instagram</string>
+    <string name="ok">OK</string>
+    <string-array name="league_names">
+        <item>UEFA Nations League</item>
+        <item>UEFA Champions League</item>
+        <item>UEFA Europa League</item>
+        <item>Premier League</item>
+        <item>La Liga</item>
+        <item>Bundesliga</item>
+        <item>Serie A</item>
+        <item>Ligue 1</item>
+        <item>Saudi Pro League</item>
+    </string-array>
+    <string-array name="method_names">
+        <item>Muslim World League</item>
+        <item>Shia Ithna-Ashari (Jafari)</item>
+        <item>Umm al-Qura (Makkah)</item>
+        <item>Egyptian General Authority</item>
+        <item>ISNA (North America)</item>
+        <item>University of Islamic Sciences, Karachi</item>
+        <item>Diyanet (Turkey)</item>
+    </string-array>
+    <string name="sb_match_error">Could not load matches</string>
+    <string name="sb_prayer_error">Could not load prayer times</string>
+    <string name="bg_nature">Nature</string>
+    <string name="bg_pick_nature">Nature backgrounds</string>
+    <string name="s_mosque">Mosque (MAWAQIT)</string>
+    <string name="mosque_none">Automatic (by city)</string>
+    <string name="mosque_hint">Mosque name, city, MAWAQIT ID or page link</string>
+    <string name="mosque_help">Search MAWAQIT for your mosque. If search fails, paste the mosque page link from mawaqit.net.</string>
+    <string name="mosque_clear">Remove mosque</string>
+    <string name="mosque_searching">Searching…</string>
+    <string name="mosque_search_fail">Search failed</string>
+    <string name="mosque_ok">Mosque times loaded:</string>
+    <string name="mosque_fail">Could not read the mosque times</string>
+    <string-array name="nature_names">
+        <item>Mountain lake</item>
+        <item>Misty forest</item>
+        <item>Ocean sunset</item>
+        <item>Desert dunes</item>
+        <item>Northern lights</item>
+        <item>Alpine peaks</item>
+        <item>Foggy hills</item>
+        <item>Tropical beach</item>
+        <item>Starry night</item>
+        <item>Green valley</item>
+    </string-array>
+    <string name="s_bg_auto">Automatic background rotation</string>
+    <string name="s_bg_interval">Background interval</string>
+    <string name="s_bg_random">Random backgrounds</string>
+    <string name="s_match_count">Number of matches</string>
+    <string name="s_notify_match">Match notifications</string>
+    <string name="s_notify_before">Notify before match</string>
+    <string name="s_hijri_adjust">Hijri date adjustment</string>
+    <string name="s_idle">Standby after inactivity</string>
+    <string name="s_night_auto">Automatic night mode</string>
+    <string name="s_night_start">Night mode start</string>
+    <string name="s_night_end">Night mode end</string>
+    <string name="s_glass">Glass cards</string>
+    <string name="s_glass_alpha">Glass transparency</string>
+    <string name="s_clock_seconds">Show clock seconds</string>
+    <string name="s_clock_size">Clock size</string>
+    <string name="s_weather_forecast">Weather forecast</string>
+    <string name="section_language">Language</string>
+    <string name="section_background">Backgrounds</string>
+    <string name="section_clock">Clock and calendar</string>
+    <string name="section_weather">Weather</string>
+    <string name="section_prayer">Prayer times</string>
+    <string name="section_match_times">Match times</string>
+    <string name="section_adhkar">Adhkar</string>
+    <string name="section_matches">Matches</string>
+    <string name="section_standby">Standby screen</string>
+    <string name="section_layout">Interface customization</string>
+    <string name="section_night">Night mode</string>
+    <string name="s_night_manual">Manual night mode</string>
+    <string name="inputs_unavailable">No TV inputs are available on this device.</string>
+    <string name="weather_loading">Weather: loading…</string>
+    <string name="weather_unavailable">Weather data is temporarily unavailable.</string>
+    <string name="s_app_icon_size">Application icon size</string>
+    <string name="s_hidden_apps">Hidden applications</string>
+    <string name="s_clock_style">Clock appearance</string>
+    <string name="s_adhkar_enable">Show Islamic adhkar on standby</string>
+    <string name="s_adhkar_morning">Morning adhkar</string>
+    <string name="s_adhkar_evening">Evening adhkar</string>
+    <string name="s_adhkar_general">General adhkar</string>
+    <string name="s_adhkar_sleep">Sleep adhkar</string>
+    <string name="s_adhkar_wake">Waking adhkar</string>
+    <string name="s_adhkar_prayer">After-prayer adhkar</string>
+    <string name="s_adhkar_quran">Quranic supplications</string>
+    <string name="s_adhkar_dua">Prophetic supplications</string>
+    <string name="s_adhkar_auto">Automatic rotation</string>
+    <string name="s_adhkar_sequential">Sequential order (off = random)</string>
+    <string name="s_adhkar_count">Number of adhkar shown</string>
+    <string name="custom_value">Custom value</string>
+    <string name="s_adhkar_position">Adhkar position</string>
+    <string name="s_adhkar_opacity">Adhkar opacity</string>
+    <string name="s_adhkar_color">Adhkar text color</string>
+    <string name="position_bottom">Bottom</string>
+    <string name="position_center">Center</string>
+    <string name="position_top">Top</string>
+    <string name="s_adhkar_interval">Adhkar rotation interval</string>
+    <string name="s_adhkar_size">Adhkar text size</string>
+    <string name="s_adhkar_source">Show adhkar category/source</string>
+    <string name="seconds_unit">seconds</string>
+    <string name="no_hidden_apps">There are no hidden applications.</string>
+    <string name="show_selected">Show selected</string>
+    <string name="show_all">Show all</string>
+    <string name="reorder_hint">Reorder mode: use ◀ ▶ then OK to finish</string>
+    <string name="reorder_done">Order saved</string>
+</resources>

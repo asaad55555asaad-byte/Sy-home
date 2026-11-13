@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name">Sy Home</string>
+    <string name="p_fajr">الفجر</string>
+    <string name="p_sunrise">الشروق</string>
+    <string name="p_dhuhr">الظهر</string>
+    <string name="p_asr">العصر</string>
+    <string name="p_maghrib">المغرب</string>
+    <string name="p_isha">العشاء</string>
+    <string name="m_first">نقل للأول</string>
+    <string name="m_earlier">تقديم</string>
+    <string name="m_later">تأخير</string>
+    <string name="m_hide">إخفاء</string>
+    <string name="menu_title">القائمة</string>
+    <string name="menu_unhide">إظهار التطبيقات المخفية</string>
+    <string name="menu_reset">إعادة الترتيب الافتراضي</string>
+    <string name="menu_settings">إعدادات النظام</string>
+
+    <string name="settings_title">الإعدادات</string>
+    <string name="s_language">اللغة</string>
+    <string name="lang_auto">تلقائي (لغة التلفزيون)</string>
+    <string name="p_screen_settings">إعدادات الشاشة</string>
+    <string name="p_arrange">ترتيب المفضلة</string>
+    <string name="p_standby">شاشة التوقف</string>
+    <string name="q_tvsettings">إعدادات التلفزيون</string>
+    <string name="shelf_favs">المفضلة</string>
+    <string name="shelf_apps">كل التطبيقات</string>
+    <string name="shelf_inputs">المداخل</string>
+    <string name="of_fmt">%1$s %2$d من %3$d</string>
+    <string name="m_fav_add">إضافة للمفضلة</string>
+    <string name="m_fav_remove">إزالة من المفضلة</string>
+    <string name="done_toast">تم</string>
+    <string name="reset_favs">إعادة ضبط المفضلة</string>
+    <string name="s_team">فريقك المفضل</string>
+    <string name="team_hint">اسم الفريق بالإنجليزي، مثلاً Barcelona</string>
+    <string name="sb_next_match">المباراة القادمة</string>
+    <string name="sb_no_match">ما في مباراة قريبة</string>
+    <string name="sb_ramadan">رمضان</string>
+    <string name="sb_ramadan_now">رمضان كريم</string>
+    <string name="sb_days">%1$d يوماً</string>
+    <string name="sb_starts">يبدأ تقريباً %1$s</string>
+    <string name="sb_next_prayer">الصلاة القادمة</string>
+    <string name="sb_after">بعد %1$s</string>
+    <string name="dur_min">%1$d دقيقة</string>
+    <string name="dur_hm">%1$d س %2$d د</string>
+    <string name="sb_hilo">العظمى %1$d° والصغرى %2$d°</string>
+    <string name="wc_clear">صافي</string>
+    <string name="wc_partly">غائم جزئياً</string>
+    <string name="wc_cloudy">غائم</string>
+    <string name="wc_fog">ضباب</string>
+    <string name="wc_rain">مطر</string>
+    <string name="wc_snow">ثلج</string>
+    <string name="wc_storm">عاصفة رعدية</string>
+    <string name="s_background">الخلفية</string>
+    <string name="s_dim">تعتيم الصورة</string>
+    <string name="s_accent">لون التحديد</string>
+    <string name="s_columns">عدد الأعمدة (كل التطبيقات)</string>
+    <string name="s_labels">أسماء التطبيقات</string>
+    <string name="s_weather">الطقس</string>
+    <string name="s_prayers">أوقات الصلاة</string>
+    <string name="s_clock">نظام الساعة</string>
+    <string name="s_units">وحدة الحرارة</string>
+    <string name="s_city">المدينة</string>
+    <string name="s_method">طريقة حساب الصلاة</string>
+    <string name="s_on">مفعّل</string>
+    <string name="s_off">مغلق</string>
+    <string name="bg_color">لون</string>
+    <string name="bg_image">صورة</string>
+    <string name="bg_pick_color">اختر لوناً</string>
+    <string name="bg_pick_image">اختر صورة</string>
+    <string name="bg_reset">الافتراضي</string>
+    <string name="clock_24">24 ساعة</string>
+    <string name="clock_12">12 ساعة</string>
+    <string name="unit_c">مئوية (°C)</string>
+    <string name="unit_f">فهرنهايت (°F)</string>
+    <string name="city_hint">اسم المدينة</string>
+    <string name="search">بحث</string>
+    <string name="cancel">إلغاء</string>
+    <string name="no_results">ما في نتائج</string>
+    <string name="no_picker">ما لقيت مستعرض صور بهالتلفزيون</string>
+    <string name="img_error">تعذر تحميل الصورة</string>
+    <string name="net_error">ما في اتصال</string>
+    <string name="reset_all">إعادة ضبط كل الإعدادات</string>
+
+    <string name="q_wifi">الواي فاي</string>
+    <string name="q_settings">الإعدادات</string>
+    <string name="q_inputs">المداخل</string>
+    <string name="q_apps">كل التطبيقات</string>
+    <string name="menu_syhome">إعدادات Sy Home</string>
+    <string name="m_live">مباشر</string>
+    <string name="m_ft">انتهت</string>
+    <string name="m_page">صفحة المباراة</string>
+    <string name="day_today">اليوم</string>
+    <string name="day_tomorrow">غداً</string>
+    <string name="day_yesterday">أمس</string>
+    <string name="no_inputs">ما لقينا مداخل</string>
+    <string name="no_matches">ما في مباريات قريبة</string>
+    <string name="s_matches">عرض المباريات</string>
+    <string name="s_leagues">البطولات</string>
+    <string name="credit_by">تم تصميم البرنامج من قبل</string>
+    <string name="credit_ig">تابعنا على الانستغرام</string>
+    <string name="ok">تمام</string>
+    <string-array name="league_names">
+        <item>دوري الأمم الأوروبية</item>
+        <item>دوري أبطال أوروبا</item>
+        <item>الدوري الأوروبي</item>
+        <item>الدوري الإنجليزي الممتاز</item>
+        <item>الدوري الإسباني</item>
+        <item>الدوري الألماني</item>
+        <item>الدوري الإيطالي</item>
+        <item>الدوري الفرنسي</item>
+        <item>دوري روشن السعودي</item>
+    </string-array>
+    <string-array name="method_names">
+        <item>رابطة العالم الإسلامي</item>
+        <item>الجعفري (الشيعة الاثنا عشرية)</item>
+        <item>أم القرى (مكة)</item>
+        <item>الهيئة المصرية العامة للمساحة</item>
+        <item>أمريكا الشمالية ISNA</item>
+        <item>جامعة العلوم الإسلامية، كراتشي</item>
+        <item>ديانت (تركيا)</item>
+    </string-array>
+    <string name="sb_match_error">تعذر تحميل المباريات</string>
+    <string name="sb_prayer_error">تعذر تحميل أوقات الصلاة</string>
+    <string name="bg_nature">طبيعة</string>
+    <string name="bg_pick_nature">خلفيات الطبيعة</string>
+    <string name="s_mosque">المسجد (MAWAQIT)</string>
+    <string name="mosque_none">تلقائي (حسب المدينة)</string>
+    <string name="mosque_hint">اسم المسجد أو المدينة أو معرف MAWAQIT أو رابط المسجد</string>
+    <string name="mosque_help">ابحث عن مسجدك في MAWAQIT. إذا ما اشتغل البحث، الصق رابط صفحة المسجد من موقع mawaqit.net.</string>
+    <string name="mosque_clear">إزالة المسجد</string>
+    <string name="mosque_searching">جاري البحث…</string>
+    <string name="mosque_search_fail">فشل البحث</string>
+    <string name="mosque_ok">تم تحميل أوقات المسجد:</string>
+    <string name="mosque_fail">تعذر قراءة أوقات المسجد</string>
+    <string-array name="nature_names">
+        <item>جبال وبحيرة</item>
+        <item>غابة ضبابية</item>
+        <item>غروب على البحر</item>
+        <item>كثبان الصحراء</item>
+        <item>الشفق القطبي</item>
+        <item>قمم جبلية</item>
+        <item>تلال ضبابية</item>
+        <item>شاطئ استوائي</item>
+        <item>ليلة نجوم</item>
+        <item>وادي أخضر</item>
+    </string-array>
+    <string name="s_bg_auto">تبديل الخلفية تلقائياً</string>
+    <string name="s_bg_interval">مدة تبديل الخلفية</string>
+    <string name="s_bg_random">خلفيات عشوائية</string>
+    <string name="s_match_count">عدد المباريات</string>
+    <string name="s_notify_match">إشعارات المباريات</string>
+    <string name="s_notify_before">التنبيه قبل المباراة</string>
+    <string name="s_hijri_adjust">تعديل التاريخ الهجري</string>
+    <string name="s_idle">شاشة التوقف بعد الخمول</string>
+    <string name="s_night_auto">الوضع الليلي التلقائي</string>
+    <string name="s_night_start">بداية الوضع الليلي</string>
+    <string name="s_night_end">نهاية الوضع الليلي</string>
+    <string name="s_glass">البطاقات الزجاجية</string>
+    <string name="s_glass_alpha">شفافية البطاقات</string>
+    <string name="s_clock_seconds">إظهار ثواني الساعة</string>
+    <string name="s_clock_size">حجم الساعة</string>
+    <string name="s_weather_forecast">توقعات الطقس</string>
+    <string name="section_language">اللغة</string>
+    <string name="section_background">الخلفيات</string>
+    <string name="section_clock">الساعة والتقويم</string>
+    <string name="section_weather">الطقس</string>
+    <string name="section_prayer">مواقيت الصلاة</string>
+    <string name="section_match_times">أوقات المباريات</string>
+    <string name="section_adhkar">الأذكار</string>
+    <string name="section_matches">المباريات</string>
+    <string name="section_standby">شاشة التوقف</string>
+    <string name="section_layout">تخصيص الواجهة</string>
+    <string name="section_night">الوضع الليلي</string>
+    <string name="s_night_manual">الوضع الليلي اليدوي</string>
+    <string name="inputs_unavailable">لا توجد مداخل تلفاز متاحة على هذا الجهاز.</string>
+    <string name="weather_loading">الطقس: جارٍ التحميل…</string>
+    <string name="weather_unavailable">بيانات الطقس غير متاحة مؤقتاً.</string>
+    <string name="s_app_icon_size">حجم أيقونات التطبيقات</string>
+    <string name="s_hidden_apps">التطبيقات المخفية</string>
+    <string name="s_clock_style">شكل الساعة</string>
+    <string name="s_adhkar_enable">عرض الأذكار على شاشة الخمول</string>
+    <string name="s_adhkar_morning">أذكار الصباح</string>
+    <string name="s_adhkar_evening">أذكار المساء</string>
+    <string name="s_adhkar_general">الأذكار العامة</string>
+    <string name="s_adhkar_sleep">أذكار النوم</string>
+    <string name="s_adhkar_wake">أذكار الاستيقاظ</string>
+    <string name="s_adhkar_prayer">أذكار ما بعد الصلاة</string>
+    <string name="s_adhkar_quran">أدعية قرآنية</string>
+    <string name="s_adhkar_dua">أدعية نبوية</string>
+    <string name="s_adhkar_auto">التغيير التلقائي</string>
+    <string name="s_adhkar_sequential">ترتيب متتابع (إيقاف = عشوائي)</string>
+    <string name="s_adhkar_count">عدد الأذكار الظاهرة</string>
+    <string name="custom_value">قيمة مخصصة</string>
+    <string name="s_adhkar_position">موضع الأذكار</string>
+    <string name="s_adhkar_opacity">شفافية الأذكار</string>
+    <string name="s_adhkar_color">لون نص الأذكار</string>
+    <string name="position_bottom">أسفل الشاشة</string>
+    <string name="position_center">وسط الشاشة</string>
+    <string name="position_top">أعلى الشاشة</string>
+    <string name="s_adhkar_interval">مدة تغيير الذكر</string>
+    <string name="s_adhkar_size">حجم خط الأذكار</string>
+    <string name="s_adhkar_source">إظهار تصنيف الذكر ومصدره</string>
+    <string name="seconds_unit">ثانية</string>
+    <string name="no_hidden_apps">لا توجد تطبيقات مخفية.</string>
+    <string name="show_selected">إظهار المحدد</string>
+    <string name="show_all">إظهار الكل</string>
+    <string name="reorder_hint">وضع الترتيب: حرّك بـ ◀ ▶ ثم OK للحفظ</string>
+    <string name="reorder_done">تم حفظ الترتيب</string>
+</resources>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sbRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050104">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/standby_scrim" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:orientation="vertical"
+        android:padding="36dp">
+
+        <TextView
+            android:id="@+id/sbDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/sbDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E6DDE8"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/sbHijri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E6DDE8"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:orientation="vertical"
+        android:padding="36dp">
+
+        <TextView
+            android:id="@+id/sbCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E6DDE8"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/sbTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/sbHiLo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E6DDE8"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/sbWeatherDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E6DDE8"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/sbForecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E6DDE8"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="56dp"
+        android:gravity="bottom"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal">
+
+        <TextClock
+            android:id="@+id/sbClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm"
+            android:includeFontPadding="false"
+            android:textColor="#FFFFFF"
+            android:textSize="120sp" />
+
+        <TextClock
+            android:id="@+id/sbAmPm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="14dp"
+            android:format12Hour="a"
+            android:format24Hour="a"
+            android:textColor="#E6DDE8"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingHorizontal="36dp"
+        android:paddingBottom="26dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:orientation="vertical"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/sbMatchLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/sbMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sbMatchSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#44FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/sbRamLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/sbRam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sbRamSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#44FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/sbPrayLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/sbPray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sbPraySub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/sbPrayerTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9BFCB"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

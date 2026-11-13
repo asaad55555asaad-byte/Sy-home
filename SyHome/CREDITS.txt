@@ -1,0 +1,19 @@
+SyHome 2.0 — Asset credits and licensing status
+================================================
+
+Bundled nature images currently present in the supplied SyHome source archive:
+- bg_nature_1.jpg
+- bg_nature_2.jpg
+- bg_nature_3.jpg
+- bg_nature_4.jpg
+- bg_nature_5.jpg
+
+All five files are 1920x1080 JPEGs and are embedded from the original user-supplied
+project archive. The files contain no EXIF/IPTC creator, source URL, or license
+metadata. Their original authors and license terms therefore cannot be verified
+from the supplied project. No author, source, or free-license claim is fabricated
+here. Verify the original source and obtain/record permission before redistribution.
+
+The specification requests 10–12 photographs. Only five were present in the
+provided archive; no additional photographs have been added because their origin
+and redistribution rights could not be established.
