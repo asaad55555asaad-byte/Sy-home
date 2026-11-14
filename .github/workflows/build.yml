@@ -2,23 +2,74 @@ name: Build
 on:
   workflow_dispatch:
   push:
-    paths: ['SyHome.zip']
+    paths: ['*.zip']
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Unzip project
-        run: unzip -q -o SyHome.zip
+      # اختيار ملف الـ zip: آخر ملف انرفع (بدون ملف mobile)
+      - name: Pick latest zip
+        id: zip
+        run: |
+          FILE=$(git log -1 --name-only --diff-filter=AM --format= -- '*.zip' | grep -vi "mobile" | head -n1 || true)
+          if [ -z "$FILE" ]; then
+            FILE=$(ls SyHome*.zip | grep -vi "mobile" | sort -V | tail -n1)
+          fi
+          echo "Using: $FILE"
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
-      # تجهيز Android SDK: تثبيت الأدوات وقبول التراخيص تلقائياً
+      # مفتاح التوقيع: بينعمل مرة وحدة وبينحفظ بالريبو
+      - name: Create signing keys once and save to repo
+        run: |
+          mkdir -p keystore
+          if [ ! -f keystore/debug.keystore ]; then
+            keytool -genkeypair -v \
+              -keystore keystore/debug.keystore \
+              -alias androiddebugkey \
+              -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass android -keypass android \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
+          if [ ! -f keystore/syhome.jks ]; then
+            keytool -genkeypair -v \
+              -keystore keystore/syhome.jks \
+              -alias syhome \
+              -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass syhome123 -keypass syhome123 \
+              -dname "CN=Sy Home, OU=Dev, O=SyHome, C=DE"
+          fi
+          if [ -n "$(git status --porcelain keystore)" ]; then
+            git config user.name "github-actions"
+            git config user.email "actions@github.com"
+            git add keystore
+            git commit -m "Add signing keystore (one time)"
+            git push
+          fi
+          mkdir -p ~/.android
+          cp keystore/debug.keystore ~/.android/debug.keystore
+
+      - name: Unzip project
+        run: unzip -q -o "${{ steps.zip.outputs.file }}"
+
+      - name: Put keystore in project
+        run: |
+          mkdir -p SyHome/keystore
+          cp keystore/syhome.jks SyHome/keystore/syhome.jks
+
+      # تجهيز Android SDK
       - uses: android-actions/setup-android@v3
         with:
           packages: "platform-tools platforms;android-34 build-tools;34.0.0"
@@ -26,30 +77,15 @@ jobs:
       - name: Accept licenses
         run: yes | sdkmanager --licenses || true
 
-      # إنشاء المفتاح تلقائياً (فقط إذا لم يكن موجوداً)
-      - name: Create keystore if missing
-        run: |
-          mkdir -p SyHome/keystore
-          if [ ! -f SyHome/keystore/syhome.jks ]; then
-            keytool -genkeypair -v \
-              -keystore SyHome/keystore/syhome.jks \
-              -alias syhome \
-              -keyalg RSA -keysize 2048 -validity 10000 \
-              -storepass syhome123 -keypass syhome123 \
-              -dname "CN=Sy Home, OU=Dev, O=SyHome, C=DE"
-          else
-            echo "Keystore already exists"
-          fi
-
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
 
-      # بناء التطبيق والمثبّت
+      # بناء التطبيق والمثبت
       - name: Build apps
         run: gradle -p SyHome :installer:assembleDebug :app:assembleDebug --no-daemon
 
-      # رفع ملفات APK إلى Artifacts
+      # رفع ملفات APK
       - uses: actions/upload-artifact@v4
         with:
           name: SyHome-apks
