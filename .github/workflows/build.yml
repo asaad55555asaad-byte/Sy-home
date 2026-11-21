@@ -1,4 +1,6 @@
+
 name: Build
+
 on:
   workflow_dispatch:
   push:
@@ -10,12 +12,13 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # اختيار ملف الـ zip: آخر ملف انرفع (بدون ملف mobile)
+      # اختيار أحدث ملف ZIP
       - name: Pick latest zip
         id: zip
         run: |
@@ -31,10 +34,11 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      # مفتاح التوقيع: بينعمل مرة وحدة وبينحفظ بالريبو
+      # إنشاء مفاتيح التوقيع
       - name: Create signing keys once and save to repo
         run: |
           mkdir -p keystore
+
           if [ ! -f keystore/debug.keystore ]; then
             keytool -genkeypair -v \
               -keystore keystore/debug.keystore \
@@ -43,6 +47,7 @@ jobs:
               -storepass android -keypass android \
               -dname "CN=Android Debug,O=Android,C=US"
           fi
+
           if [ ! -f keystore/syhome.jks ]; then
             keytool -genkeypair -v \
               -keystore keystore/syhome.jks \
@@ -51,6 +56,7 @@ jobs:
               -storepass syhome123 -keypass syhome123 \
               -dname "CN=Sy Home, OU=Dev, O=SyHome, C=DE"
           fi
+
           if [ -n "$(git status --porcelain keystore)" ]; then
             git config user.name "github-actions"
             git config user.email "actions@github.com"
@@ -58,12 +64,15 @@ jobs:
             git commit -m "Add signing keystore (one time)"
             git push
           fi
+
           mkdir -p ~/.android
           cp keystore/debug.keystore ~/.android/debug.keystore
 
+      # فك ضغط المشروع
       - name: Unzip project
         run: unzip -q -o "${{ steps.zip.outputs.file }}"
 
+      # وضع مفتاح التوقيع داخل المشروع
       - name: Put keystore in project
         run: |
           mkdir -p SyHome/keystore
@@ -81,15 +90,13 @@ jobs:
         with:
           gradle-version: 8.7
 
-      # بناء التطبيق والمثبت
-      - name: Build apps
-        run: gradle -p SyHome :installer:assembleDebug :app:assembleDebug --no-daemon
+      # بناء Sy Home فقط بدون Installer
+      - name: Build Sy Home
+        run: gradle -p SyHome :app:assembleDebug --no-daemon
 
-      # رفع ملفات APK
+      # رفع APK الخاص بالتطبيق
       - uses: actions/upload-artifact@v4
         with:
-          name: SyHome-apks
-          path: |
-            SyHome/installer/build/outputs/apk/debug/installer-debug.apk
-            SyHome/app/build/outputs/apk/debug/app-debug.apk
+          name: SyHome-APK
+          path: SyHome/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
