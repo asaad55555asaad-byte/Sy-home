@@ -88,19 +88,42 @@ jobs:
       - name: Build Sy Home
         run: gradle -p SyHome :app:assembleDebug --no-daemon
 
+      # Obfuscated copy (names scrambled). Optional: a failure here never stops the normal build.
+      - name: Build obfuscated release (test copy)
+        continue-on-error: true
+        run: gradle -p SyHome :app:assembleRelease --no-daemon
+
       - uses: actions/upload-artifact@v4
         with:
           name: SyHome-APK
           path: SyHome/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
 
-      # A download link that does not need the Actions page: Releases -> latest
-      - name: Publish APK to Releases
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SyHome-APK-obfuscated-test
+          path: SyHome/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: ignore
+
+      # Publish ONLY the APK to the public releases repository. The source stays in this (private) repository.
+      # Needs the secret RELEASES_TOKEN (fine-grained token, Contents: read and write, on the releases repository only).
+      # To publish the obfuscated copy instead, change APK_PATH to SyHome/app/build/outputs/apk/release/app-release.apk
+      - name: Publish APK to the public releases repo
         env:
-          GH_TOKEN: ${{ github.token }}
+          RELEASES_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          PUBLIC_REPO: asaad55555asaad-byte/Sy-home-releases
+          APK_PATH: SyHome/app/build/outputs/apk/debug/app-debug.apk
         run: |
           VER=$(grep -m1 'versionName' SyHome/app/build.gradle.kts | sed 's/.*"\(.*\)".*/\1/')
-          cp SyHome/app/build/outputs/apk/debug/app-debug.apk "SyHome-v${VER}.apk"
-          gh release delete "v${VER}" --yes --cleanup-tag 2>/dev/null || true
-          gh release create "v${VER}" "SyHome-v${VER}.apk" --title "Sy Home v${VER}" \
-            --notes "Built automatically from ${{ steps.zip.outputs.file }}"
+          cp "$APK_PATH" "SyHome-v${VER}.apk"
+          if [ -n "$RELEASES_TOKEN" ]; then
+            export GH_TOKEN="$RELEASES_TOKEN"
+            REPO="$PUBLIC_REPO"
+          else
+            echo "RELEASES_TOKEN is not set: publishing to this repository instead"
+            export GH_TOKEN="${{ github.token }}"
+            REPO="${{ github.repository }}"
+          fi
+          gh release delete "v${VER}" --repo "$REPO" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "v${VER}" "SyHome-v${VER}.apk" --repo "$REPO" --title "Sy Home v${VER}" \
+            --notes "Sy Home ${VER}"
